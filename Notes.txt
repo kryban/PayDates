@@ -1,0 +1,38 @@
+https://docs.microsoft.com/en-us/aspnet/core/web-api/?view=aspnetcore-2.1
+https://code-maze.com/aspnetcore-webapi-best-practices/
+
+Tools: 
+- Postman
+- Swagger
+- OpenAPI
+
+ProjectLayout: 
+ /Extensions (voor o.a. CORS extensie)
+ /Models (objecten) : Product(Id, Naam, Omschrijving, DatumBegin, DatumEinde); Betaaldatum (P)
+ /Repositories (DAL) 
+	- IRepository (indien een generieke repository class komt); 
+	- ProductRepository, 
+	- BetaaldatumRepository, 
+	- ProductContext (indien EF); 
+	- BetaaldatumContext (indien EF);
+ /Controllers (ProductController, BetaalDatumController)
+
+
+CORS
+Data repository / openApi ?
+	Scheiden van data en api, zodat het makkelijk koppelbaar is met t.z.t socrates
+
+API voor het opvragen van producten
+API voor het opvragen van aankomende uitbetaaldatum van een bepaald product. 
+
+
+
+Unit test
+https://code-maze.com/unit-testing-aspnetcore-web-api/
+
+
+
+
+
+
+
