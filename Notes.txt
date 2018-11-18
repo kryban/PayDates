@@ -4,6 +4,9 @@ https://code-maze.com/aspnetcore-webapi-best-practices/
 Tools: 
 - Postman
 - Swagger
+	- Swashbuckle.AspNetCore
+	or
+	- NSWAG
 - OpenAPI
 
 ProjectLayout: 
@@ -17,14 +20,18 @@ ProjectLayout:
 	- BetaaldatumContext (indien EF);
  /Controllers (ProductController, BetaalDatumController)
 
-
-CORS
-Data repository / openApi ?
+- CORS
+- Data repository / openApi ?
 	Scheiden van data en api, zodat het makkelijk koppelbaar is met t.z.t socrates
+- Decorate controllers with routing requirement
+- Annotate controllers with ApiController attribute (for version compability)
+- Automatic 400 responses (set in a InvalidModelStateResponseFactory)
+- decorate action parameters with a "binding source attribute" to specify the location where the data can be found
+- Register all your interfaces to DI (sefvices.AddScoped<IFoo,IFooImplementation>()) in ConfirgureServices() in startup
+- 
 
 API voor het opvragen van producten
 API voor het opvragen van aankomende uitbetaaldatum van een bepaald product. 
-
 
 
 Unit test

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace PayDates.Controllers
 {
     [Route("api/[controller]")]
-    [ApiController]
+    [ApiController] // is required for the version compability as set in StartUp/ConfigureServices.
     public class PaydatesController : ControllerBase
     {
         // GET: api/Paydates

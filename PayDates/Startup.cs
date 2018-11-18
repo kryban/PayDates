@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using PayDates.Extensions;
+using PayDates.Interfaces;
+using PayDates.Repositories;
 
 namespace PayDates
 {
@@ -29,6 +31,8 @@ namespace PayDates
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             services.AddCors();
+
+            RegisterInterfacesToDependencyInjection(services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,6 +49,11 @@ namespace PayDates
 
             app.UseHttpsRedirection();
             app.UseMvc();
+        }
+
+        private void RegisterInterfacesToDependencyInjection(IServiceCollection services)
+        {
+            services.AddScoped<IProductRepository,ProductRepository>();
         }
     }
 }

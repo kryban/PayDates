@@ -4,6 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using PayDates.Interfaces;
+using PayDates.Models;
+using PayDates.Repositories;
+
 
 namespace PayDates.Controllers
 {
@@ -11,6 +15,13 @@ namespace PayDates.Controllers
     [ApiController]
     public class ProductsController : ControllerBase
     {
+        IProductRepository repository;
+
+        public ProductsController(IProductRepository repository)
+        {
+            this.repository = repository;
+        }
+
         // GET: api/Products
         [HttpGet]
         public IEnumerable<string> Get()
@@ -27,8 +38,11 @@ namespace PayDates.Controllers
 
         // POST: api/Products
         [HttpPost]
-        public void Post([FromBody] string value)
+        [ProducesResponseType(400)]
+        public void Post()//Product product)//[FromBody] string value)
         {
+            //var foo = product;
+            var bar = "ff";
         }
 
         // PUT: api/Products/5

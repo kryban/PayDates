@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using PayDates.Models;
+using PayDates.Interfaces;
 
 namespace PayDates.Repositories
 {
-    public class ProductRepository
+    public class ProductRepository: IProductRepository
     {
         public List<Product> GetAllProducts()
         {
@@ -22,8 +23,9 @@ namespace PayDates.Repositories
         {
         }
 
-        public void DeleteProduct(int d)
+        public void DeleteProduct(int id)
         {
+            throw new NotImplementedException();
         }
     }
 }
